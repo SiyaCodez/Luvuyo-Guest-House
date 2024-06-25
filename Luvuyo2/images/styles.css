@@ -1,0 +1,190 @@
+﻿    
+   .navbar {
+        background-color: #232323;
+        border: none;
+    }
+
+    .navbar-brand {
+        color: white !important;
+        font-weight: bold;
+         font-size: 18px;
+    }
+
+    .navbar-nav > li > a {
+        color: white !important;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-image: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+     
+    .gridview {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-gap: 8px;
+    }
+
+    .gridview-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: center;
+    }
+
+    .gridview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .check-availability {
+        padding: 80px 
+    }
+
+    .check-availability h2 {
+        padding-left: 0;
+        line-height: 1;
+        font-size: 20px
+    }
+
+    .check-availability .availability-form {
+        margin-top: 20px
+    }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height to take up the full viewport height */
+    max-width: 100%; /* Adjust to ensure the content stretches to the full width */
+    background-size: cover;
+    background-position: center;
+}
+    .logo {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-weight: bold;
+        color: white;
+        font-size: 50px;
+        margin-top: 20px;
+    }
+    H2{
+        color: white;
+        font-family: arial;
+        text-align:center;
+        font-size:12pt;
+        font-weight:lighter;
+
+    }
+      .image-container {
+        text-align: center;
+    }
+
+    .image-item {
+        display: inline-block;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .image-item button {
+        display: block;
+        margin-top: 10px;
+    }
+
+       
+        /* Define the animation keyframes for the sliding animation */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .section-sub-banner {
+            padding-top: 80px;
+        }
+
+        .bg-9 img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .bg-9-2 img {
+            width: 60%;
+            animation: slideIn 2s; /* Apply the slide animation to the images */
+        }
+
+        .text-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+        }
+
+        .text-container h2 {
+            font-family: Aptos;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .text-container p {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .button-container button {
+            padding: 12px 24px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        section {
+            position: relative;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+   

@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Luvuyo2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Luvuyo's Guest House</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/images/Luyolo.ico" rel="icon" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="content/vendor/animate.css/animate.min.css"/>
+      <link href="content/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <script src="Scripts/js/script.js"></script>
+    <link href="Content/vendor/font-awesome/css/all.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+    <div class="navbar navbar-inverse navbar-fixed-top" style ="background: rgb(0,102,102)">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" runat="server" href="~/"> Luvuyo's Guest House</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"  EnableCenterAlign ="true">
+
+                    <li><a runat="server" href="~/">Home</a></li>
+                    <li><a runat="server" href="~/About">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Accommodation<span class="caret"></span> </a> 
+                           <ul class="dropdown-menu">  
+                             <li><a class="dropdown-item" href="/Private/Private1">New Reservation</a></li>
+                             <li><a class="dropdown-item" href="/Private/Private2">Check Reservation</a></li>
+                           </ul>
+                       </li>
+                    <li><a runat="server" href="~/Gallery">Gallery</a></li>
+                    <li><a runat="server" href="~/Contact">Contact</a></li>    
+                    <li><a runat="server" href="~/Private/ProfilePage.aspx">Profile</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/Private/WebForm1.aspx" runat="server" visible="false" id="ddlAdmin">Admin</a>
+                  </li>
+                    </ul>
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Register">Sign Up</a></li>
+                            <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+    </div>
+        <hr />
+ 
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+ 
+
+
+     
+</form>
+     <footer>
+    <div class="footer-row">
+        <div class="footer-col">
+            <img class="footer-logo" src="images/Logo1.png" alt="Logo"/>
+            <p>Situated in the heart of Petermaritzburg at 51 Carbis RD Scottsville, our family-owned guest house offers more than just a place to rest – it's a true home away from home.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Location</h3>
+            <p>51 Carbis Road </br> Scottsville Rd, Pietermaritzburg</p>
+            <p class="email">info@luvuyosguesthouse.com</p>
+            <h4 class="footer-n">+27 33 457 9879</h4>
+        </div>
+        <div class="footer-col">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="~/">Home</a></li>
+                <li><a href="~/About">About</a></li>
+                <li><a href="~/Gallery">Gallery</a></li>
+                <li><a href="~/Contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Stay Connected</h3>
+              <div class="social-icons"> 
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-whatsapp"></i>
+              </div>
+        </div>
+    </div>
+    <hr />
+    <p class="copyright"> Luvuyo's Guest House © 2024 - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+   

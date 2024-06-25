@@ -39,7 +39,7 @@ namespace Luvuyo2.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
-                        SqlConnection conn = new SqlConnection("Data Source=146.230.177.46;Initial Catalog=GroupPmb5;Integrated Security=False;User ID=GroupPmb5;Password=vgtrc4");
+                        SqlConnection conn = new SqlConnection("DefaultConnection");
                         conn.Open();
                         SqlCommand cmd = new SqlCommand("SELECT GuestID FROM GUEST WHERE GuestEmail = @email",conn);
                         if (Email.Text == null)
